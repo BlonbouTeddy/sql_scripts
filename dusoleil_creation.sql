@@ -17,10 +17,6 @@ CREATE TABLE `dusoleil`.`convention`(
 
 CREATE TABLE `dusoleil`.`record`(
     id INT PRIMARY KEY
-)
-
-CREATE TABLE `dusoleil`.`origin`(
-    id INT PRIMARY KEY
 );
 
 CREATE TABLE `dusoleil`.`entourage`(
