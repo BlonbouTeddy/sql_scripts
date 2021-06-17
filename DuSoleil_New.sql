@@ -46,6 +46,7 @@ CREATE TABLE `entourage` (
   `address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cp` varchar(5) COLLATE utf8_unicode_ci DEFAULT NULL,
   `city` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `region` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tel` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tel2` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `comment` varchar(255) COLLATE utf8_unicode_ci,
