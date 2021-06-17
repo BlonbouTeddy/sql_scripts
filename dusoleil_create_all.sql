@@ -297,6 +297,11 @@ ALTER TABLE `terminatetype`
 -- Structure de la table `user`
 --
 
+DROP TABLE `hibernate_sequence`;
+CREATE TABLE `hibernate_sequence` (
+    `next_val` bigint,
+)
+
 DROP TABLE `user`;
 
 CREATE TABLE `user` (
