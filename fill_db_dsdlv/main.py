@@ -3,9 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-host = "vps-f7b5701d.vps.ovh.net"
-user = "root"
-password = ""
+host = "localhost"
+user = "demo"
+password = "Onemoretime34"
 database = "dusoleil"
 uri = "mysql+pymysql://" + user + ":" + password + "@" + host + "/" + database
 
