@@ -19,7 +19,7 @@ USE `dusoleil`;
 DROP TABLE `convention`;
 
 CREATE TABLE `convention` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -27,7 +27,7 @@ ALTER TABLE `convention`
   ADD PRIMARY KEY (`id`);
   
 ALTER TABLE `convention`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
@@ -38,7 +38,7 @@ ALTER TABLE `convention`
 DROP TABLE `entourage`;
 
 CREATE TABLE `entourage` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `subscriber_id` int DEFAULT NULL,
   `civility` int(6) DEFAULT NULL,
   `firstname` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -59,7 +59,7 @@ ALTER TABLE `entourage`
   
 
 ALTER TABLE `entourage`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,7 @@ ALTER TABLE `entourage`
 DROP TABLE `origin`;
 
 CREATE TABLE `origin` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `firstname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `lastname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `function` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -83,7 +83,7 @@ ALTER TABLE `origin`
   ADD PRIMARY KEY (`id`);
   
 ALTER TABLE `origin`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------  
 
@@ -94,7 +94,7 @@ ALTER TABLE `origin`
 DROP TABLE `platform`;
 
 CREATE TABLE `platform` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `ip` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `ipbx` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -105,7 +105,7 @@ ALTER TABLE `platform`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `platform`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,7 @@ ALTER TABLE `platform`
 DROP TABLE `record`;
 
 CREATE TABLE `record` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `subscriber_id` int DEFAULT NULL,
   `user_id` int DEFAULT NULL,
   `socialtrack_id` int DEFAULT NULL,
@@ -133,7 +133,7 @@ ALTER TABLE `record`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `record`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
@@ -144,7 +144,7 @@ ALTER TABLE `record`
 DROP TABLE `socialtrack`;
 
 CREATE TABLE `socialtrack` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `subscriber_id` int DEFAULT NULL,
   `socialtracktype_id` int DEFAULT NULL,
   `date_start` datetime NOT NULL,
@@ -155,7 +155,7 @@ ALTER TABLE `socialtrack`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `socialtrack`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
@@ -166,7 +166,7 @@ ALTER TABLE `socialtrack`
 DROP TABLE `socialtracktype`;
 
 CREATE TABLE `socialtracktype` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -174,7 +174,7 @@ ALTER TABLE `socialtracktype`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `socialtracktype`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
@@ -185,7 +185,7 @@ ALTER TABLE `socialtracktype`
 DROP TABLE `subscriber`;
 
 CREATE TABLE `subscriber` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `convention_id` int DEFAULT NULL,
   `origin_id` int DEFAULT NULL,
   `user_id` int DEFAULT NULL,
@@ -224,7 +224,7 @@ ALTER TABLE `subscriber`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `subscriber`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
@@ -235,7 +235,7 @@ ALTER TABLE `subscriber`
 DROP TABLE `terminatetype`;
 
 CREATE TABLE `terminatetype` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -243,7 +243,7 @@ ALTER TABLE `terminatetype`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `terminatetype`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 
@@ -254,7 +254,7 @@ ALTER TABLE `terminatetype`
 DROP TABLE `user`;
 
 CREATE TABLE `user` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `enabled` int(6) NOT NULL,
   `last_login` datetime DEFAULT NULL,
   `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -273,7 +273,7 @@ ALTER TABLE `user`
 DROP TABLE `paramenum`;
 
 CREATE TABLE `paramenum` (
-  `id` int NOT NULL,
+  `id` bigint NOT NULL,
   `text` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `type` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `value` int NOT NULL
@@ -283,7 +283,7 @@ ALTER TABLE `paramenum`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `paramenum`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 -- --------------------------------------------------------
 -- CREATION DES FOREIGN KEY -------------------------------
