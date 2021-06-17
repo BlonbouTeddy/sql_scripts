@@ -84,7 +84,7 @@ DROP TABLE `entourage`;
 
 CREATE TABLE `entourage` (
   `id` bigint NOT NULL,
-  `subscriber_id` int DEFAULT NULL,
+  `subscriber_id` bigint DEFAULT NULL,
   `civility` int(6) DEFAULT NULL,
   `firstname` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lastname` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -163,10 +163,10 @@ DROP TABLE `record`;
 
 CREATE TABLE `record` (
   `id` bigint NOT NULL,
-  `subscriber_id` int DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
-  `socialtrack_id` int DEFAULT NULL,
-  `terminatetype_id` int DEFAULT NULL,
+  `subscriber_id` bigint DEFAULT NULL,
+  `user_id` bigint DEFAULT NULL,
+  `socialtrack_id` bigint DEFAULT NULL,
+  `terminatetype_id` bigint DEFAULT NULL,
   `type` int(6) NOT NULL,
   `text` longtext COLLATE utf8_unicode_ci,
   `date` datetime NOT NULL,
@@ -191,8 +191,8 @@ DROP TABLE `socialtrack`;
 
 CREATE TABLE `socialtrack` (
   `id` bigint NOT NULL,
-  `subscriber_id` int DEFAULT NULL,
-  `socialtracktype_id` int DEFAULT NULL,
+  `subscriber_id` bigint DEFAULT NULL,
+  `socialtracktype_id` bigint DEFAULT NULL,
   `date_start` datetime NOT NULL,
   `date_end` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -232,10 +232,10 @@ DROP TABLE `subscriber`;
 
 CREATE TABLE `subscriber` (
   `id` bigint NOT NULL,
-  `convention_id` int DEFAULT NULL,
-  `origin_id` int DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
-  `platform_id` int DEFAULT NULL,
+  `convention_id` bigint DEFAULT NULL,
+  `origin_id` bigint DEFAULT NULL,
+  `user_id` bigint DEFAULT NULL,
+  `platform_id` bigint DEFAULT NULL,
   `civility` int(6) NOT NULL,
   `firstname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `lastname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -304,7 +304,7 @@ CREATE TABLE `user` (
   `enabled` int(6) NOT NULL,
   `last_login` datetime DEFAULT NULL,
   `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `platform_id` int DEFAULT NULL,
+  `platform_id` bigint DEFAULT NULL,
   `roles` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `username` varchar(100) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -313,7 +313,7 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT;
 
 
 DROP TABLE `paramenum`;
